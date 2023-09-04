@@ -106,10 +106,10 @@ public class Cine {
     }
     
     public boolean edadMin(int edad){
-        return peli.getEdadMinima()<edad;
+        return peli.getEdadMinima()<=edad;
     }
     
     public boolean dineroDisp(double dinero){
-        return this.getEntrada()<dinero;
+        return this.getEntrada()<=dinero;
     }
 }

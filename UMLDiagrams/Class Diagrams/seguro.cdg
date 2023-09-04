@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="seguro">
+  <ClassDiagramComponents>
+    <Class name="Cliente" package="" visibility="public" xPosition="14.0" yPosition="84.0">
+      <Fields>
+        <Field name="Nombre" type="String" visibility="private"/>
+        <Field name="Apellido" type="String" visibility="private"/>
+        <Field name="Documento" type="int" visibility="private"/>
+        <Field name="Mail" type="String" visibility="private"/>
+        <Field name="Domicilio" type="String" visibility="private"/>
+        <Field name="Telefono" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="" visibility="public" xPosition="330.0" yPosition="32.0">
+      <Fields>
+        <Field name="Marca" type="String" visibility="private"/>
+        <Field name="Modelo" type="String" visibility="private"/>
+        <Field name="Anio" type="int" visibility="private"/>
+        <Field name="Motor" type="int" visibility="private"/>
+        <Field name="Chasis" type="String" visibility="private"/>
+        <Field name="Color" type="String" visibility="private"/>
+        <Field name="Tipo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Poliza" package="" visibility="public" xPosition="471.0" yPosition="360.0">
+      <Fields>
+        <Field name="Poliza" type="int" visibility="private"/>
+        <Field name="Inicio" type="Date" visibility="private"/>
+        <Field name="Fin" type="Date" visibility="private"/>
+        <Field name="CantCuotas" type="int" visibility="private"/>
+        <Field name="FormaPago" type="String" visibility="private"/>
+        <Field name="MontoAsegurado" type="Double" visibility="private"/>
+        <Field name="IncluyeGranizo" type="Boolean" visibility="private"/>
+        <Field name="MontoGranizo" type="Double" visibility="private"/>
+        <Field name="TipoCobertura" type="String" visibility="private"/>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+        <Field name="Vehiculo" type="Vehiculo" visibility="private"/>
+        <Field name="Cuota" type="ArrayList" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Cuota" package="" visibility="public" xPosition="172.0" yPosition="553.0">
+      <Fields>
+        <Field name="NroCuota" type="int" visibility="private"/>
+        <Field name="MontoTotal" type="Double" visibility="private"/>
+        <Field name="pagada" type="Boolean" visibility="private"/>
+        <Field name="Vencimiento" type="Date" visibility="private"/>
+        <Field name="FormaPago" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="vehiculo-poliza" source="Poliza" target="Vehiculo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="poliza-cuotas" source="Poliza" target="Cuota" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Cliente" source="Poliza" target="Cliente" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
